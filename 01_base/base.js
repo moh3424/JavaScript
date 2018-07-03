@@ -409,7 +409,7 @@ if (age ==''){
  document.write('<br>');document.write('<br>');
  // Exercice : sans modifier la condition la boucle while précédente, vous la compléter pour ne pa afficher les "---"
 
- // 2eme Méthode
+ // 1er Méthode
  document.write('<h2> 1er Méthode</h2>');
  var i = 0; // on initialise une variable à 0 pour compter le nombre de tours de boucle
 
@@ -445,6 +445,59 @@ for (i = 0; i <= 5; i++);{// On met dans les () du for : initialisation de la va
     document.write(i + '---');
     // suite du code
 }
+
+//------------
+// Exercice : afficher un menu déroulant avec les années de 1900 à 2020. Utilsez une boucle FOR
+
+ // 1er Méthode
+ document.write('<h2> 1er Méthode</h2>');
+ document.write('<br>');document.write('<br>');
+document.write('<select>');
+for ( i = 1900; i <= 2020; i++ ) {
+    document.write('<option> '+ i + ' </option>');
+}  
+document.write('</select>');
+
+document.write('<br>');document.write('<br>');
+document.write('<h2>2eme Méthode</h2>');
+ // 2eme Méthode
+var 
+    nav1 = '<select>',
+    nav2 =  '</select>',
+    nav3 =  '';
+for ( i = 1900; i <= 2020; i++ ) {
+   
+    nav3 +='<option> '+ i + ' </option>' ;
+}  
+document.write(nav1 + nav3 + nav2);
+document.write('<br>');document.write('<br>');
+ // 3eme Méthode
+ document.write('<h2>3eme Méthode</h2>');
+
+ document.write('<br>');document.write('<br>');
+
+document.write('<br>');document.write('<br>');
+
+var affichage = '';
+affichage += '<selecte>'
+for ( i = 1900; i <= 2020; i++ ) {
+    affichage +='<option> '+ i + ' </option>' ;
+}  
+affichage += '</select>';
+document.write(affichage);
+
+document.write('<br>');document.write('<br>');
+// La boucle do ... while existe aussi. Elle a la particularité de s'exécuter au moins une fois. Elle est rarement utilisée
+
+//---------------------
+// 12- Les Fonctions Utilisateurs
+//-----------------------
+document.write('<h2> 12- Les Fonctions Utilisateurs</h2>');
+//
+// Les fonctions sont des morceaux de codes encapsulés dans des accolades et portant un nom. Elle sont appelées (par leur nom) quand on a besoin d'exécuter tout le code qui s'y trouve. Il est d'usage de faire des fonctions simples qui réalisent des actions unitaires.
+
+//
+// A chaque fois qu'on répète une action, voir  s'il est possible de la mettre dans une fonction: cela s'appelle factoriser son code
 
 
 
