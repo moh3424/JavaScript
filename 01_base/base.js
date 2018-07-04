@@ -478,13 +478,13 @@ document.write('<br>');document.write('<br>');
 
 document.write('<br>');document.write('<br>');
 
-var affichage = '';
-affichage += '<selecte>'
-for ( i = 1900; i <= 2020; i++ ) {
-    affichage +='<option> '+ i + ' </option>' ;
-}  
-affichage += '</select>';
-document.write(affichage);
+// var affichage = '';
+// affichage += '<selecte>'
+// for ( i = 1900; i <= 2020; i++ ) {
+//     affichage +='<option> '+ i + ' </option>' ;
+// }  
+// affichage += '</select>';
+// document.write(affichage);
 
 document.write('<br>');document.write('<br>');
 // La boucle do ... while existe aussi. Elle a la particularité de s'exécuter au moins une fois. Elle est rarement utilisée
@@ -499,15 +499,39 @@ document.write('<h2> 12- Les Fonctions Utilisateurs</h2>');
 //
 // A chaque fois qu'on répète une action, voir  s'il est possible de la mettre dans une fonction: cela s'appelle factoriser son code
 
+function d(param) {
+    document.write(param + '<br>');
+}
+
+//appelle la fonction
+d('<div class="test">Test de notre fonction</div>');
 
 
+//----------------
+//Préambule à l'exercice:
+function meteo(saison) {
+    d('Nous sommes en ' + saison); // nous avons la possibilité d'utiliser une autre fonction, ici d(), dans les instructions
+}
+
+meteo('été');
+meteo('printemps');
+
+//------------
+
+function exoMeteo(meteo) {
+    switch (meteo){
+    case 'printemps':
+    d('Nous somme au ' + meteo + '.');
+    break;
+   default :
+   d('Nous somme en ' + meteo + '.');
+}
+}
 
 
-
-
-
-
-
+exoMeteo('été');
+exoMeteo('printemps');
+exoMeteo('hiver');
 
 
 
