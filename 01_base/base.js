@@ -534,6 +534,56 @@ exoMeteo('printemps');
 exoMeteo('hiver');
 
 
+//--------------
+// le mot clé "return" qui permet de sortir une valeur d'une fonction :
+function somme(a, b) {
+    var resultat = a + b;
+    return resultat; // return permet de SORTIR la valeur de resultat de la fonction
+}
+
+d('La somme de 2 + 4 est égale à ' + somme(2, 4));
+function multiplication(a, b) {
+    var resultat = a * b;
+    return resultat;
+}
+d('La multiplication de 2 + 4 est égale à ' + somme(2, 4));// on récupère ici la valeur 6 de resultat grace au return qui se trouve dans la fonction somme()
 
 
+//----------------------
+// 13- La portée des variables
+//------------------------
+
+/*
+Selon l'endroit et la façon dont une variable est déclarée, elle pourra étre accessible partout dans le script ou uniquement dans une portion limitée du code des fonctions. On parle de portée des variables (scope en anglais).
+
+-Une variable déclarée SANS le mot clé var (façon implicite) : elle est accessible PARTOUT dans le script, y compris au sein des fonction : elle est dite GLOBAL
+
+-Une variable déclarée AVEC le mot clé var (façon explicite) :
+            -à l'exterieur d'une fonction elle sera GLOBALE, donc accessible partout dans le script, y compris au sein des fonction
+            -à l'intérieur d'une fonction elle sera LOCAL, donc accessible uniquement DANS cette fonction.
+
+*/
+
+var animal = 'loup';// variable globale
+function jungle() {
+    var animal = 'tigre'; // variable local
+    return animal;
+}
+
+d(animal); //loup car on est dans l'espace global
+d(jungle()); // tigre grace au return qui se trouve à la fin de la fonction : il sort la valeur tigre de la variable local à la fonction
+d(animal); // loup pour les memes raisons que le premier
+
+//-------------
+d('<hr>');
+
+var oiseau = 'Aigle';
+function ciel() {
+    oiseau = 'Faucon';
+    return oiseau;
+}
+
+d(oiseau); // Aigle car on utilise la premier variable globale disponible qui vaut Aigle
+d(ciel()); // Faucon grace au return de la fonction. MAIS en exécutant celle-ci on a changé le contenu de la variable globale pour y mettre Faucon !
+d(oiseau); // par conséquent la variable oiseau contien désormé Faucon
 
