@@ -753,10 +753,10 @@ d(animal.length); // affiche 4 soit le nombre de caractères du string contenu d
 var adresse = '      16 rue de seine          ';
 d('adresse avec des espaces : ' + adresse);
 d('adresse avec des espaces : ' + adresse.length); // longueur y compris les espaces 
-d('adresse avec des espaces : ' + typeof(adresse.length));// retourne le type de la valeur
+d('adresse avec des espaces : ' + typeof(adresse.length));// retourne le type de la valeur (la langueur de l'adresse en number)
 d('adresse sans les espaces : ' + adresse.trim());//affichage de l'adresse  et suppression des espaces
 d('adresse sans les espaces : ' + adresse.trim().length);
-d('adresse sans les espaces : ' + typeof(adresse.trim().length));
+d('adresse sans les espaces : ' + typeof(adresse.trim().length));// retourne le type de la valeur (la langueur de l'adresse en number) apres la suppression des espaces
 
 // Notez qu'une ressources sur le net :
 
