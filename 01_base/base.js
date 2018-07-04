@@ -643,9 +643,91 @@ var taille = ['Selection une taille','S', 'M', 'L', 'XL'],
 tailleAffichage ='<select>';
 
 // document.write('<select>');
+console.log(taille);
 for (var i = 0; i < taille.length; i++) {
     tailleAffichage +='<option> '+ taille[i] + ' </option>';
 }
 tailleAffichage +=  '</select>';
 d(tailleAffichage);
+
+//--------------
+// Ajouter ou Supprimer des valeurs au début ou à la fin d'un array :
+
+taille.push('XXL'); // ajoute "XXL" à la fin de l'array tailles
+// console.log(taille);
+taille.unshift('XS'); // ajout "XS" au début de l'array taille
+console.log(taille);
+taille.pop(); // retire le dernier élément de l'array taille
+console.log(taille); 
+taille.shift(taille);
+console.log(taille); // retire le premier élément de l'array taille
+
+//-----------------
+// 15- Les Objet
+//-----------------
+document.write('<h3>-15 Les Objets</h3>');
+/**
+ * Un objet est un ensemble de propriétés qui correspondent à l'association d'un nom et d'une valeur. cette valeur peut etre de n'importe quel type (string, number, boolean, array, objet ...)
+ * 
+ * Deplus, la valeur de la propriété peut etre un fonction. Dans ce cas cette propriété s'appelle une methode (il s'agit simplement d'une fonction dans un objet).
+ * les propriétés et les méthodes d'un objet objet s'appellent les "membres" de cet objet.
+ * 
+ * 
+ */
+
+ // Création d'un objet :
+ var personnage = {
+            nom : 'Tatin',
+            animal : 'chien',
+            amis : ['Haddock', 'Tournesol', 'Dupont & Dupond'],
+            age : 35 // par convention pas de "," au dernier élément
+ }; // on termine bien l'instriction avec ";"
+
+ // Accéder à la valeur d'une proprité d'un obljet :
+ document.write('<h3>1er Méthode d\'affichage</h3>');
+ d(personnage.nom); // affiche Tintin.
+
+ document.write('<h3>2eme Méthode d\'affichage</h3>');
+ d(personnage['nom']); // affichage Tatin.
+
+ // Remlissage d'une proprité :
+ document.write('<h4>Remlissage d\'une proprité :</h4>');
+ personnage.nom = 'Milou';
+ // ou encore :
+ document.write('<h5>ou encore :</h5>');
+ personnage['animal'] = 'Milou' ;
+ 
+// Pour afficher Tournesol
+document.write('<h3>1er Méthode d\'affichage</h3>');
+d(personnage.amis[1]);// Pour accéder a "Tournesole", on va à la propriété "amis" de personnage 
+
+document.write('<h3>2eme Méthode d\'affichage</h3>');
+d(personnage['amis'][1]); //de la meme manière qu'avec Milou
+
+//----------------
+// Création d'une objet avec une méthode :
+
+var maVoiture = {
+            marque : 'Mercedes',
+            couleur : 'noire',
+            motorisation : {
+                    energie : 'diesel',
+                    puissance :'110CV',
+                    garantie : true
+            },
+            afficherOrigine : function() {
+                    document.write('origine allemande<br>');
+            }
+};
+
+// on identifie les méthodes au mot clé function qui permet d'y mettre le code qu'elles doivent exécuter (tout comme une fonction).
+
+d(maVoiture.marque); // affiche Mercedes
+d(maVoiture.couleur); // affiche noire
+maVoiture.afficherOrigine(); // appel de la méthode  affiche "origine allemande"
+
+d(maVoiture.motorisation.energie);// affiche diesel
+
+
+
 
