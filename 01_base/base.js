@@ -625,7 +625,7 @@ d(deuxDimensions[0][2] + ' et des ' + deuxDimensions[1][2]);
 //-------------------
 // Exercice : créer un array avec les tailles S, M, L et XL. A l'aide d'une boucle for, afficher un menu déroulant  avec les tailles provenant de l'array, à l'intérieur
 d('<h3> 1er Méthode</h3>');
-var taille = ['Selection une taille','S', 'M', 'L', 'XL'];
+var taille = ['Selection une taille','XL', 'L', 'M', 'S'];
 nav1 = '<select>',
 nav2 =  '</select>',
 nav3 =  '';
@@ -639,15 +639,12 @@ document.write(nav1 + nav3 + nav2);
 document.write('<br>');document.write('<br>');
 
 d('<h3> 2eme Méthode</h3>');
-
 var taille = ['Selection une taille','S', 'M', 'L', 'XL'],
 tailleAffichage ='<select>';
 
 // document.write('<select>');
 for (var i = 0; i < taille.length; i++) {
-    
     tailleAffichage +='<option> '+ taille[i] + ' </option>';
-    
 }
 tailleAffichage +=  '</select>';
 d(tailleAffichage);
