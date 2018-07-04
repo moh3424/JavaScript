@@ -728,6 +728,37 @@ maVoiture.afficherOrigine(); // appel de la méthode  affiche "origine allemande
 
 d(maVoiture.motorisation.energie);// affiche diesel
 
+d('<hr>');
 
+//------------------------
+// la boucle for....in
+//----------------------
+//la boucle for.....in permet de parcourir les objets et de récupérer tous les membre (=)
 
+for (var membre in maVoiture.motorisation){
+    d(membre +' a pour valeur '+ maVoiture.motorisation[membre]);
+}// membre s'appelle un "référent" : c'est  sa place dans la syntaxe du for ... in qui détérmine que "membre" récupère le nom des propriétés à chaque tour de la boucle. Ainsi, maVoiture.motorisation[membre] permet de récupérer la valeur correspondante à la propriété contenue dans "membre". Note : on ne met pas de quote à membre dans les [] car il s'agit d'une variable.
 
+//-------------------
+// 15- Propiété et méthode de l'objet string
+//------------------------------------
+document.write('<h2>15- Propiété et méthode de l\'objet string</h2>');
+
+// propriété length :
+animal = 'loup';
+d(animal.length); // affiche 4 soit le nombre de caractères du string contenu dans la variable animal
+
+//méthode trim()
+
+var adresse = '      16 rue de seine          ';
+d('adresse avec des espaces : ' + adresse);
+d('adresse avec des espaces : ' + adresse.length); // longueur y compris les espaces 
+d('adresse avec des espaces : ' + typeof(adresse.length));// retourne le type de la valeur
+d('adresse sans les espaces : ' + adresse.trim());
+d('adresse sans les espaces : ' + adresse.trim().length);
+d('adresse sans les espaces : ' + typeof(adresse.trim().length));
+
+// Notez qu'une ressources sur le net :
+
+//----------------
+// Trouver des ressources sur le JS MDN
