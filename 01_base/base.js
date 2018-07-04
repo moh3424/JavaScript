@@ -585,5 +585,70 @@ function ciel() {
 
 d(oiseau); // Aigle car on utilise la premier variable globale disponible qui vaut Aigle
 d(ciel()); // Faucon grace au return de la fonction. MAIS en exécutant celle-ci on a changé le contenu de la variable globale pour y mettre Faucon !
-d(oiseau); // par conséquent la variable oiseau contien désormé Faucon
+d(oiseau); // par conséquent la variable oiseau contien désormé Fauconhttps://git-scm.com/book/fr/v2/Les-bases-de-Git-Enregistrer-des-modifications-dans-le-d%C3%A9p%C3%B4t
+
+//--------------
+// 14- les arreys (les tableaux)
+//-------------------
+document.write('<h2>Les arrays</h2>');
+//Un array, ou un tableau en français, est un tableau qui contient plusieurs valeur, appelées items ou éléments. Chaque élément est accessible au moyen d'un indice (ou index) dont la numérotation commence à partir de 0.
+
+//Déclaration d'un array :
+var monTableau = ['Emilie', 'Magalie', 'Zakir', 'Elric', 96]; // déclaration d'un array qui contient des strings et un number (version conventionnelle la plus utilisée). Chaque élément a un indice Emilie le 0, puis Magalie le 1, et ainsi de suite.
+
+//Accéder à un item ou un élément de l'array :
+
+d(monTableau[0]); // affiche l'élément de valeur Emeli
+
+//Remlacer la valeur "Elric" par la valeur "Alphonse":
+monTableau[3] = 'Alphonse'; // on modifie la valeur positionnée à l'indice 3 y mettre Alphonse
+d(monTableau[3]); //affichage de Alphonse
+d(monTableau.length); // affiche 5 correspondant aux nombres d'éléments tu tableau
+
+// parcourir un tableau
+d('<h3>Parcourir un tableau</h3>');
+for (var i = 0; i < monTableau.length; i++){
+    d(monTableau[i]);// La variable i prend successivement les valeurs de 0 à 4 inclus. monTableau[i] permet donc de parcourir chaque indice du 0 au 4
+}
+
+//------------
+// Array Multidimensionnel
+// Un array Multidimensionnel est un tbleau qui contient un ou plusieurs autres tableaux.
+d('<h3> Array Multidimensionnel</h3>');
+
+var deuxDimensions = [['fraise', 'pommes', 'bananes'],['tomates', 'carottes', 'courgettes']];
+
+d(deuxDimensions[0][2]); //pour accéder à la valeur "bananes", je vais d'abord à l'indice 0 tableau deuxDimension, puis à l'intérieur je vais à l'indice 2.
+
+d(deuxDimensions[0][2] + ' et des ' + deuxDimensions[1][2]);
+
+//-------------------
+// Exercice : créer un array avec les tailles S, M, L et XL. A l'aide d'une boucle for, afficher un menu déroulant  avec les tailles provenant de l'array, à l'intérieur
+d('<h3> 1er Méthode</h3>');
+var taille = ['Selection une taille','S', 'M', 'L', 'XL'];
+nav1 = '<select>',
+nav2 =  '</select>',
+nav3 =  '';
+// document.write('<select>');
+for (var i = 0; i < taille.length; i++) {
+    
+    nav3 +='<option> '+ taille[i] + ' </option>';
+    
+}
+document.write(nav1 + nav3 + nav2);
+document.write('<br>');document.write('<br>');
+
+d('<h3> 2eme Méthode</h3>');
+
+var taille = ['Selection une taille','S', 'M', 'L', 'XL'],
+tailleAffichage ='<select>';
+
+// document.write('<select>');
+for (var i = 0; i < taille.length; i++) {
+    
+    tailleAffichage +='<option> '+ taille[i] + ' </option>';
+    
+}
+tailleAffichage +=  '</select>';
+d(tailleAffichage);
 
