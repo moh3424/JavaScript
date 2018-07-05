@@ -24,7 +24,7 @@
 
     <!-- Exercice -->
 
-    <article class = "exo">Lorem ipsum</article>
+    <article class = "exo">Lorem ipsum</articl>
     <article class = "exo">Lorem ipsum</article>
     <article class = "exo">Lorem ipsum</article>
     <article class = "exo">Lorem ipsum</article>
@@ -119,13 +119,34 @@
         
         var lesP = document.querySelectorAll('p'); // sélectionne TOUS les éléments qui correspondent au sélecteur CSS précisé, dans l'ordre dans lequel ils apparaissent dans le HTML. Par voie de conséquence, il faut préciser l'indice de l'élément que l'on veut cibler
 
-        for (var i = 0; i < lesP.length; i++) {
-            lesP[i].onclick = function() {
-                alert(this.innerHTML);
+        // On fait une boucle pour parcourire les 4 paragraphe <p>:
+        for (var i = 0; i < lesP.length; i++) {// lesP.length vaut 4 paragraphes dans cet démonstration (= nombre de paragraphe)
+            lesP[i].onclick = function() {// on accroche un évenement click sur chaque paragraphe. la fonction qui suit ATTEND l'ordre du click (c'est-à-dir que l'internaute a cliqué) pour s'éxécute.
+                alert(this.innerHTML);// this se référe au pragraphe sur lequel l'internaute a cliqué précisément
             };
         }
 
+        //-----------------
+        // Préambule à l'exercice : au click sur la première section, son texte devient bleu :
+        document.querySelector('#section1').onclick = function() {
+            this.style.color ='blue';  // on ajoute un atribut style à la balise #section1 dans lequel on met une proprieté CSS color de valeur "blue". Apres styles vous pouvez écrire n'importe quelle proprièté CSS. Note : les propriétés CSS contenant un tiret s'écrivent sans celui-ci et avec une majuscule : font-size devien fontSize
+        };
 
+        // Exercice : au clic sur le 1ez <article>, celui-ci devient bleu. En revanche, au clic sur les 3 autres <articles>, ceux-ci deviennnent rouges
+
+        document.querySelector('.exo').onclick = function() {
+            this.style.color = 'blue';
+        }; 
+
+        var mesArticles = document.querySelectorAll('.exo');
+        for (var i = 1; i < mesArticles.length; i++) {
+            mesArticles[i].onclick = function() {
+            this.style.color = 'red';
+            };  
+        }
+      
+        
+       
 
     </script>
     
