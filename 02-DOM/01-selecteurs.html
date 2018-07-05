@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selecteurs</title>
+</head>
+<body>
+    <section id="section1">Sélection par l'id</section>
+    <br>
+    <section id="section2">Sélection par getElementById</section><br>
+    <br>
+    <span>Sélection par getElementsByTagName</span>
+
+    <div class="lesDiv">div0 sélectionné par geElementsByClassName</div>
+    <div class="lesDiv">div1 sélectionné par geElementsByClassName</div>
+    <div class="lesDiv">di20 sélectionné par geElementsByClassName</div>
+
+    <p>paragrapher 0 sélectionné par querySelector</p>
+    <p>paragrapher 1 sélectionné par querySelector</p>
+    <p>paragrapher 2 sélectionné par querySelector</p>
+    <p>paragrapher 3 sélectionné par querySelector</p>
+
+    <!-- Exercice -->
+
+    <article class = "exo">Lorem ipsum</article>
+    <article class = "exo">Lorem ipsum</article>
+    <article class = "exo">Lorem ipsum</article>
+    <article class = "exo">Lorem ipsum</article>
+    <script>
+        // --------------------------------------------
+        // Présentation du DOM (Document Object Model)
+        // --------------------------------------------
+
+        /*
+            le DOM pour Document Object Model, est un programme (API) interne au navigateur qui fait en sorte que :
+                - chaque balise HTML
+                - chaque attribut des balise HTML,
+                - chaque événement produit dans le navigateur deviennent des objets récupérables et manipulables par le JavaScript.
+        */
+
+        // L'objet window :
+        // L'objet window est l'objet global qui représente le navigateur :
+
+        //window.alert('salut');
+
+        // il est aussi le seul qui peut etre utilisé de manière implicite (sans l'écrire) :
+
+        //alert('salut');
+
+        //  L'objet document :
+        // il représente le document HTML. Notez que nous sommes obligés de l'écrire (il n'est pas implicite....).
+
+        // -------------------
+        // Les Selécteurs
+        // --------------------
+        // Un sélecteur pérmet de sélectionne une ou plusieurs balises du document HTML.
+
+        // -----------------
+        // Sélection directe par l'id :
+        var monId1 = section1; // tous les ids sont atteignables directement par leur nom : section1 est en fait un objet créé par le DOM qui représente la balise d'id "section1". Notez que : création d'une variable pour ne pas solicité le domme a chaque fois 
+
+        monId1.onclick = function () { // onclick est un événement qui déclenche la fonction anonyme qui suit lors du clic sur la balise stockée dans monId1
+            alert(monId1.innerHTML);// innerHTML est une propriété qui contient le contenu HTML présent entre les balises de monId1
+        };
+        
+        //--------------
+        // Sélection par le nom de l'id :
+        var monId2 = document.getElementById('section2'); // sélectionne la balise d'id "section2" et crée un objet qui la présente
+
+        monId2.onclick = function(){
+            alert(monId2.innerHTML);
+        };
+
+        //------------------
+        // Sélection par le nom de la balise
+        var maBalise = document.getElementsByTagName('span');// sélectionne TOUTES les balise de type "span" sous forme d'un objet contenant les différentes balises sous forme d'objets elles-memes avec un indice numérique
+
+        maBalise[0].onclick = function() {// on indique donc obligatoirement l'indice de l'élément que l'on veut cibler en particulier, ici le premier (et le seul dans cette exemple)
+            alert(maBalise[0].innerHTML);
+        };
+
+        //-------------------
+        // Sélection par le nom de la classe :
+
+        var mesClasses = document.getElementsByClassName('lesDiv');// sélectionne TOUTES les balises de classe "lesDiv" => il faudra indiquer l'indice de l'élement que l'on veut cibler
+       
+        // 1er écriture
+        mesClasses[0].onclick = function() {
+            alert(mesClasses[0].innerHTML);
+        };
+
+         // 2eme écriture
+         mesClasses[0].onclick = function() {
+            alert(this.innerHTML);// this se réfère à l'objet dans lequel je me situe, celui qui porte l'événement : ici il s'agit à mesClasses[1] c'est a dir le premier dive de ma classe "mesClasses"
+        };
+        mesClasses[1].onclick = function() {
+            alert(this.innerHTML);
+        };
+        mesClasses[2].onclick = function() {
+            alert(this.innerHTML);
+        };
+
+        //On observe donc que l'on peut faire une boucle pour ne pa répéter ces lignes de codes.
+
+
+        //---------------------------------
+        // Sélection avec querySelector :
+
+        var p = document.querySelector('p'); // sélectionne le PREMIER élément trouvé correspondant au sélecteur CSS indiqué dans les (). Vous y mettez n'importe quel sélecteur CSS : pour les ids #monId, pour les classes .maClasse, etc.
+
+        p.onclick = function() {
+            alert(this.innerHTML);// this se réfère à p sur lequel on a cliqué
+        };
+
+        //--------------------------
+        // Sélection avec querySelectorAll :
+        
+        var lesP = document.querySelectorAll('p'); // sélectionne TOUS les éléments qui correspondent au sélecteur CSS précisé, dans l'ordre dans lequel ils apparaissent dans le HTML. Par voie de conséquence, il faut préciser l'indice de l'élément que l'on veut cibler
+
+        for (var i = 0; i < lesP.length; i++) {
+            lesP[i].onclick = function() {
+                alert(this.innerHTML);
+            };
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
