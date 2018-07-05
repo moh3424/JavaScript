@@ -762,3 +762,5 @@ d('adresse sans les espaces : ' + typeof(adresse.trim().length));
 
 //----------------
 // Trouver des ressources sur le JS MDN
+
+//https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/trim
