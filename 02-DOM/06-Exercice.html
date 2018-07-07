@@ -19,6 +19,10 @@
                 text-align: center;
                 width: 50%;
             }
+            input{
+                border-radius: 2%;
+                background: greenyellow;
+            }
         </style>
 </head>
 <body>
@@ -36,7 +40,6 @@
         // Exercice : Lorsque vous etes en focus (=événement "focus") sur un input, sa bordure devien rouge. Puis lorsque vous ets en blur ( événement "blur") sur input, sa bordur redevient normal. Utilisez addEventListener
           
             var focus= document.getElementsByClassName("focus");
-               
             // function attribuerFocus() {
             //     document.getElementsByClassName("focus").focus();
             // }
@@ -45,7 +48,7 @@
                     }, 
             true);
             form.addEventListener("blur", function(blur) {
-                    blur.target.style.border = "";    
+                    focus.target.style.border = "";    
                 }, 
             true);  
     </script>     
