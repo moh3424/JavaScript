@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,34 @@
     <title>Exercice</title>
 </head>
 <body>
-    <form action="" methode="">
+    <form action="" methode="" id="form">
         <label for="">Pseudo</label>
-        <input type="text" name="pseudo" id="pseudo" class="focus">
+        <input type="text" name="pseudo" id="pseudo" placeholder="Votre Pseudo" class="focus">
         <br>
         <label for="">Mot de passe</label>
-        <input type="password" name="mdp" id="mdp" class="focus">
+        <input type="password" name="mdp" placeholder="********" id="mdp" class="focus">
         <br>
        
         <input type="submit" value ="se connecter">
     </form>
     <script>
-    // Exercice : Lorsque vous etes en focus (=événement "focus") sur un input, sa bordure devien rouge. Puis lorsque vous etes en blur ( événement "blur") sur input, sa bordur redevient normal. Utilisez addEventListener
-    var elementFocus = document.querySelector('.focus');
-    document.input.getFocus();
-    function changementCouleurInput() {
-    
-        elementFocus.style.border = '1px solid red';
-            // elementFocus.style.border += '1px solid green';
-    }
-    function couleurInput() {
-    
-    // elementFocus.style.border = '1px solid red';
-        elementFocus.style.border = '';
-    }
-   
-    elementFocus.addEventListener('focus', changementCouleurInput);
-    elementFocus.addEventListener('blur', couleurInput);
-   
-    </script>
+    // Exercice : Lorsque vous etes en focus (=événement "focus") sur un input, sa bordure devien rouge. Puis lorsque vous ets en blur ( événement "blur") sur input, sa bordur redevient normal. Utilisez addEventListener
+      
+        var focus= document.getElementsByClassName("focus");
+           
+        // function attribuerFocus() {
+        //     document.getElementsByClassName("focus").focus();
+        // }
+        form.addEventListener("focus", function(focus) {
+            focus.target.style.border = "1px solid red";    
+                }, 
+        true);
+        form.addEventListener("blur", function(blur) {
+                blur.target.style.border = "";    
+            }, 
+        true);
+     
+</script>     
+ 
 </body>
 </html>
