@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-appendChildremoveChildt</title>
+    <style>
+        .jaune {
+            background: yellow; width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p><a href="#">Accueil</a></p>
+    </div>
+
+    <script>
+        // createElement, aappendChild et removeChild :
+        //  On va créer une balise paragraphe <p> qui contient la description du lien "accueil", et l'accrocher dans le document HTML en tant qu'enfant de <.container>.
+
+        var monP = document.createElement('p') ;// je crée un élément <p>. monP est un objet qui represente cette balise créée
+
+        monP.className = 'jaune'; // je lui attribue la classe "jaune" grace à la propriété classNam.On peut aussi faire :
+        monP.setAttribute('class', 'jaune');
+
+        monP.textContent = 'retour vers l\accueil'; // textContent permet d'insérer du texte brut dans la balis <p>
+
+        document.querySelector('a').addEventListener('mouseover', function(){
+            document.querySelector('.container').appendChild(monP); // accroche l'objet <p> en tant qu'enfant de .container à la suite de la première <p>
+        });
+
+        document.querySelector('a').addEventListener('mouseout', function(){
+            document.querySelector('.container').removeChild(monP);// décrohe l'objet <p> enfant de .container
+        });
+    </script>
+</body>
+</html>
