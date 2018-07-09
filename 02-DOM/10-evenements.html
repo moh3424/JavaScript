@@ -44,10 +44,37 @@
 
         //-----------
         // exemple2
-        //----
+        //----------
 
         document.querySelector('.height').addEventListener('mouseenter', function(){
             message.innerHTML  += '<br>action';
+        });
+        /*
+        mousedown   => quand on abaisse un bouton de la souris
+
+        mouseup     => quand on relève un bouton de la souris
+
+        // Formulaire :
+        focus    => quand on active un input avec la souris ou la tabulation
+        blur     => quand désactive un input avec la souris ou la tabulation
+        change   => quand on change la saisie dans un input, un select, ou un textarea
+        submit   => quand on soumet un formilaire avec l'input type "submit"
+
+        // Clavier :
+        keydown   => quand on enfonce une touche de clavier
+        keypress  => quand je relache une touche de clavier
+
+        // Fenêtre du navigateur :
+        scroll   =>  défilement de la fenêtre
+        resize   => redimensionnement de la fenêtre
+
+        // Document HTML :
+        DOMContentLoaded    => quand le document HTML a été complètement chargé et analysé par le DOM, sans attendre que les feuilles de style et les image soient totalement chargées:
+                
+        */
+        document.addEventListener('DOMContentLoaded', function(){
+            // tous votre code JS
+            console.log('DOM entièrement chargé et analysé');
         });
     </script>
 </body>
