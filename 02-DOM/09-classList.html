@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09- classList</title>
+    <style>
+        p {
+            cursor: pointer;
+        }
+        .red{color:red;}
+        .blue {
+            background: cyan;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <p id="survol">Ce texte va changer de couleur au survol</p>
+    <button id="toggleBlue">Changer le background du texte</button>
+
+    <!-- exercice -->
+
+    <p class="texte">Je suis un paragraphe</p>
+    <p class="texte">Je suis un paragraphe</p>
+    <p class="texte">Je suis un paragraphe</p>
+    <p class="texte">Je suis un paragraphe</p>
+    <script>
+        // classList, et ses méthodes : add(), remove(), toggle(): 
+        // classList retourne la liste des classes CSS de l'élément sélectionné. Grace aux méthodes possède classList, on peut : ajouter une class avec add(), retirer une class avec remove()ou alterner l'ajout/suppression d'une classe avec toggle().
+
+        var element = document.querySelector('#survol');
+        // En survolant le paragraphe #survol, on lui ajoute une classe "red":
+        element.addEventListener('mouseover', function(){
+            this.classList.add('red'); // classList possède la méthode add() qui permet d'ajouter une classe à l'élément
+        });
+
+        // retirer la classe "red":
+        element.addEventListener('mouseout', function(){
+            this.classList.remove('red'); // à l'inverse la méthode remove() permet de retirer une classe à l'élément
+        });
+
+        // Ajouter ou retirer une classe alternativement à l'élément au clic sur le bouton :
+        document.querySelector('#toggleBlue').addEventListener('click', function(){
+            element.classList.toggle('blue'); // la méthode toggle permet d'ajouter ou de retirer une classe à l'élément 
+        });
+
+        //------------------
+        // Exercice : je 
+        var changeParagraphe = document.querySelectorAll('.texte');
+        
+        for (var i = 0; i < changeParagraphe.length; i++) {
+            changeParagraphe[i].addEventListener('click', function(){
+            this.classList.toggle('red');
+        });
+    }
+
+    </script>
+    
+</body>
+</html>

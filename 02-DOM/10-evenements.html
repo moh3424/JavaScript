@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-liste des événements</title>
+    <style>
+        .height{
+            padding: 40px; border: 1px solid; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="height">
+        <div class="height">
+                <div class="height">
+                    TEXTE
+                </div>
+            </div>
+    </div>
+    <div id="message"></div>
+    <script>
+        /*
+         Liste des principaux événements sans le "on";
+
+         // Souris :
+         click      =>  quand on clique
+         dblklick   => quand on double-clique
+         mouseover  => quand le curseur de la souris entre sur élément (les éléments enfants NE sont PAS inclus dans cette zone : mouseover se déclenche à l'entrée de CHAQUE élément)
+         mouseout    => quand le curseur de la souris quitte unélément (les éléments enfants NE sont PAS inclus dans cette zone : mouseout se déclenche à la sortie de CHAQUE élément)
+         mouseenter   =>   quand la souris passe par dessus la zone qu'occupe un élément (les éléments enfants sont INCLUS dans cette zone : mouseente ne se déclanche qu'UNE fois)
+         mouseleave   => quand la souris sort de cette zone (les éléments enfant sont INCLUS dans cette zone : mouseleave ne se déclanche qu'UNE fois)   
+
+        */
+        //-----------
+        // exemple1
+        //-----------
+
+        // document.querySelector('.height').addEventListener('mouseover', function(){
+        //     message.innerHTML  += '<br>action';
+        // });
+
+        //-----------
+        // exemple2
+        //----
+
+        document.querySelector('.height').addEventListener('mouseenter', function(){
+            message.innerHTML  += '<br>action';
+        });
+    </script>
+</body>
+</html>

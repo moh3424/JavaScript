@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-innerHTML-textContent</title>
+</head>
+<body>
+    <div id="message1">....</div>
+    <div id="message2">....</div>
+    <div id="message3">....</div>
+    <button>cliquez Ici</button>
+
+    <script>
+        //Différence entre innerHTML et texContent :
+        function changeTexte(){
+            //innerHTML : interprète les balise : elles sont insérées dans le document HTML
+            document.querySelector('#message1').innerHTML = '<p>Slaut, ça va?</p>';
+            //textContent : textContent traite le string comme un texte BRUT : les balises ne sont pas insérées dans le document HTML
+            document.querySelector('#message2').textContent ='<p>Slut, ça va?</p>';
+        }
+        document.querySelector('button').addEventListener('click', changeTexte);
+    </script>
+</body>
+</html>
