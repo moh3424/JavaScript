@@ -46,13 +46,37 @@
               champEmail.classList.add('red');
                 erreur =true; // On passe la variable à true pour dir qu'il y a une erreur
            } else{
+               // On est dans le else quand l'@ est la valeur de l'input email :
+               champEmail.classList.add('green');
+           }
+           // On verifie la langueur du champ mdp :
+           if (champMdp.value.trim().length < 4 || champMdp.value.trim().length > 25){
+               // si la longueur de la valeur du champ mpd est inférieure à 4 ou supérieur à 25 :
+               champMdp.classList.add('red');
+               erreur = true; // pour spécifier qu'il y a une erreur
+
+           }else {
+               //
+               champMdp.classList.add('green');
 
            }
+           // Enfin, s'il y a une erreur (erreur vaut true), on bloque le formulaire et on met un message à l'intérnaute :
+            if (erreur === true){
+                // Bloque le submit :
+            event.preventDefault(); //bloque l'envoi du formulaire. Cette méthode permet de bloquer l'action par défaut d'un événement : bloquer un lien, l'envoi d'un formulaire, la coche d'une checkbox, etc.
+            document.querySelector('#message') = 'Veuillez vérifier vos saisies !';
+            }
 
-            // On bloque le submit :
-            event.preventDefault(); //bloque l'envoi du formulaire
+       });// fin du submit
 
-
+       // On réinitialise les champs dès que qu'ils changent de valeur :
+       champEmail.addEventListener('change', function(){
+        //    quand on modifie la valeur d'un input
+           this.classList.remove('red', 'green'); // On retire toutes les classes pour mettre une bordure par défault
+       });
+       champMdp.addEventListener('change', function(){
+        //    quand on modifie la valeur d'un input
+           this.classList.remove('red', 'green'); // On retire toutes les classes pour mettre une bordure par défault
        });
    </script>
     
