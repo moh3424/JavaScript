@@ -46,7 +46,37 @@ $('#monBouton').on('click', function(){
     alert('déclanchement de la méthode on()');
 });// on() permet d'associer un événement à un élément comme le ferait addEventListener() en JS "pur". la seul différentce entre la syntaxe ligne 22 et celle-ci réside dans le fait que cette dernière marche aussi avec les éléments créés dynamiquement (= ajoutés par jQuery).
 
-$('#monBouton').off('click');
+$('#monBouton').off('click');// en ajoutant cette ligne, on dissocie les clicks de l'élément # : les clics précédemment lis au bouton ne fonctionnent plus c'est un moyen simple de supprimer un événement.
+
+//----------------
+//Evénement hover, modifier du CSS depuis jQuery :
+$('#vert').hover(
+            function(){
+                $('#rouge').css({
+                    width : '300px',
+                    'background-color' : 'yellow'
+                });
+
+            },
+             function(){
+                $('#bleu').css({
+                    width : '300px',
+                    'background-color' : 'yellow'
+                });
+
+            });
+    //L'événement hover est une combinaison de mouseover et mouseout en JS : il possède 2 fonctions anonymes qui s'éxecutent l'une quand on entre, l'autre quand on sort de l'élément.
+
+    //La méthode css() permet de modifier des propriétés CSS écrites dans un objet : on les met entre {} et sont séparées par une ",". Notez que les propriétés CSS qui contiennent un tiret s'écrivent dans des quotes.
+
+    //-------------
+    // Récupérer ou modifier la valeur d'un input avec val()
+
+    $('#mdp1').change(function(){
+        var texte = $('#mdp1').val();// geteur
+
+        $('#mdp2').val(texte);
+    });
 
 
 
