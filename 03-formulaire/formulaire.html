@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-Formulaire</title>
+    <style>
+        .red{
+            border: 2px solid red;
+        }
+        .green{
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div id="messag"> </div>
+        <form method="" action="">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email">
+            <br>
+
+            <label for="mdp">Mot de passe</label>
+            <input type="text" id="email" name="email">
+            <br>
+
+            <input type="submit" value="s'inscrire">
+        </form>
+   <script>
+       var champEmail = document.getElementById('email');
+       var champMdp = document.getElementById('mdp');
+       
+       //1- On vérifie tous les champs quand on clique sur "s'inscrire" :
+       document.querySelector('form').addEventListener('submit', function(event){
+           // submit se déclenche quand on soumet un formulaire avec l'input type "submit"
+
+           // L'objet event dans la parentèse de notre function sert à fournir des information sur les événement actuellement déclenché. Par exemple, vous pouvez récupérer les touches enfoncées, les coordonnées du curseur, ou bloquer un événement tel que l'envoi (= submit) du formulaire. Ce paramètre s'écrit "e" ou "event" par convention.
+
+           var erreur = false; // pour dire qu'il n'y a pas d'erreur au début. On mettre cette variable à true dès qu'une erreur sera produite sur le formulaire
+
+           //On vérifie le champ email :
+
+           if(champEmail.value.indexOf('@')== -1){
+               // la proprièté value permet d'accéder à la valeur saisie par l'internaute dans l'input champEmail. indexOf('@) retourne la position de l'@ dans cette valeur. S'il n'y est pas, cette méthode retourne -1
+              champEmail.classList.add('red');
+                erreur =true; // On passe la variable à true pour dir qu'il y a une erreur
+           } else{
+
+           }
+
+            // On bloque le submit :
+            event.preventDefault(); //bloque l'envoi du formulaire
+
+
+       });
+   </script>
+    
+</body>
+</html>

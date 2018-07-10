@@ -80,7 +80,26 @@ Implémentez le JavaScript de cette galerie d'images :
 
 
 <script>
-	
+	//- 1° en cliquant sur une vignette, l'image apparaît en grand dans la balise <img> du div#galerie.
+
+	var images = document.querySelectorAll('.thumbnail');
+
+	for (var i = 0; i < images.length; i++) {
+		images[i].addEventListener('click', function(){
+			console.log(1);
+			document.querySelector('#galerie img').src = this.src; // .this est obligatoire ici. On ne peut pas utiliser images[i] à la place, car quand l'internaute clique, la boucle est fini depuis très longtemps, est i vaut alors 4. image[4] n'existe pas !
+
+			document.querySelector('#galerie img').alt = this.alt; // On prend le alt de la vignette cliquée (= this)et on l'affecte au alt de l'image "#galerie img"
+			document.querySelector('.titre').textContent = this.alt; // 1er écriture car ya pa de balise
+			document.querySelector('.titre').innerHTML = this.alt; // 2em écriture 
+
+			//On met la bordure de la vignette rouge en blanc pour la "désélectionner"
+			document.querySelector('.selected').classList.remove('selected');
+
+			// On ajoute la bordure rouge à la vignette cliquée avec la classe "selected" :
+			this.classList.add('selected'); // on ajoute la classe "selected" à la vignette sur laquelle on a cliqué (= this)
+		});
+	}
 
 </script>
 </body>
