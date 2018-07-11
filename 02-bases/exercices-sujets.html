@@ -29,8 +29,6 @@
 					</ul>
 					<div id="contenu1">Ceci est le contenu 1. Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</div>
 					<div id="contenu2">Ceci est le contenu 2. Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In suscipit faucibus urna.</div>
-				
-
 		<hr>
 		
 		<h3>Exercice 2 : </h3>
@@ -76,9 +74,54 @@
 		</div>		
 
 		<script>
-			
+			$(function(){  
+					// :visible et :hidden :
+				$('.container #onglet1').click(function(){
+						$('#contenu1').show();
+						$('#contenu2').hide(); 
+				});
+				$('.container #onglet2').click(function(){
+						$('#contenu2').show();  
+						$('#contenu1').hide(); 
+				});
+				
 
-		 
+				$('.container nav ul').mouseover(function(){
+					$('.container nav ul li').show();
+				});
+
+				$('.container nav ul').mouseleave(function(){
+					$('.container nav ul li').hide();
+				});
+				
+				$('#voirMdp').mouseover(function(){/* changé l'attribut du mon de passe de type password en type text */
+						$('#mdp').attr('type', 'text');
+				});
+
+				$('#voirMdp').mouseleave(function(){
+						$('#mdp').attr('type', 'password');
+				});
+
+
+				$('.texte').click(function(){
+						$(this).toggleClass('red');  // alterne addClass() et removeClass() sur l'élément #survol (différent du bouton #classBleu : on n'utilise donc pas $(this) !)
+					});
+
+
+				$('#portfolio .group img').mouseover(function(){
+					$(this).css({ opacity : 0.5 ,transition : 'opacity 0.5s'});// Ici il s'agit d'une progriété CSS donc exprimée en seconde
+					
+					// alert();
+				});
+
+				$('#portfolio .group img').mouseleave(function(){
+					$(this).css({ opacity : 1 , transition : '5s'}); 
+					
+					// alert();
+				});
+
+
+			}); 
 		
 		</script>
 	</body>
