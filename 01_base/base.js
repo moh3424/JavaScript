@@ -319,7 +319,7 @@ si la reponse est vide (on compare avec des quotes vides SANS espace,
 
 var age = prompt('Quel est votre age ?');
 
-if ((age =='')||(age < 0)||(age > 130)){
+if (age ==''){
     document.write('Vous n\'avez pas répondu');
  } else if ( isNaN( age ) ){
     document.write('Vous n\'avez pas indiqué un nombre');
@@ -375,7 +375,7 @@ if ((age =='')||(age < 0)||(age > 130)){
         document.write('<p>Vous aimez le bleu</p>');
     break;
     case 'rose' :
-        document.write('<p>Vous aimez le rouge</p>');
+        document.write('<p>Vous aimez le rose</p>');
     break;
     case 'vert' :
         document.write('<p>Vous aimez le vert</p>');
