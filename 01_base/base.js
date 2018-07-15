@@ -413,10 +413,14 @@ if (age ==''){
     //..... du code .....
     i++;// On incrémente i de +1. On n'oublie pas d'incrémenter pour ne pas créer une boucle infinie
  }
+
  document.write('<br>');document.write('<br>');
+
+ //-------------------------
  // Exercice : sans modifier la condition la boucle while précédente, vous la compléter pour ne pa afficher les "---"
 
  // 1er Méthode
+
  document.write('<h2> 1er Méthode</h2>');
  var i = 0; // on initialise une variable à 0 pour compter le nombre de tours de boucle
 
@@ -434,12 +438,12 @@ if (age ==''){
  document.write('<h2>2eme Méthode</h2>');
  var i = 0;
  while ( i <= 5 ) {// ici entre parenthèse se situe la condition d'entrée dans la boucle while. Elle signifie "tant que i est inférieur ou égale à 5"
-switch (i) {
-    case 5 :
-        document.write(i + '');
-        break;
-    default :
-        document.write(i + '---');
+    switch (i) {
+        case 5 :
+            document.write(i + '');
+            break;
+        default :
+            document.write(i + '---');
     }
 i++;
 }
@@ -467,7 +471,7 @@ document.write('</select>');
 
 document.write('<br>');document.write('<br>');
 document.write('<h2>2eme Méthode</h2>');
- // 2eme Méthode
+//  2eme Méthode
 var 
     nav1 = '<select>',
     nav2 =  '</select>',
@@ -478,22 +482,25 @@ for ( i = 1900; i <= 2020; i++ ) {
 }  
 document.write(nav1 + nav3 + nav2);
 document.write('<br>');document.write('<br>');
- // 3eme Méthode
- document.write('<h2>3eme Méthode</h2>');
 
- document.write('<br>');document.write('<br>');
+//  3eme Méthode
+
+document.write('<h2>3eme Méthode</h2>');
+
+document.write('<br>');document.write('<br>');
 
 document.write('<br>');document.write('<br>');
 
-// var affichage = '';
-// affichage += '<selecte>'
-// for ( i = 1900; i <= 2020; i++ ) {
-//     affichage +='<option> '+ i + ' </option>' ;
-// }  
-// affichage += '</select>';
-// document.write(affichage);
+var affichage = '';
+    affichage += '<select>';
+for ( i = 1900; i <= 2020; i++ ) {
+    affichage +='<option> '+ i + ' </option>' ;
+}  
+affichage += '</select>';
+document.write(affichage);
 
 document.write('<br>');document.write('<br>');
+
 // La boucle do ... while existe aussi. Elle a la particularité de s'exécuter au moins une fois. Elle est rarement utilisée
 
 //---------------------
