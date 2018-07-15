@@ -372,22 +372,29 @@ if (age ==''){
 
  switch (couleur) {
     case 'bleu' :
-        document.write('<p>Vous aimez le bleu</p>');
+        document.write('<p class = "bleu">Vous aimez le bleu</p>');
+
     break;
     case 'rose' :
-        document.write('<p>Vous aimez le rose</p>');
+        document.write('<p class = "rose">Vous aimez le rose</p>');
     break;
     case 'vert' :
-        document.write('<p>Vous aimez le vert</p>');
+        document.write('<p class = "vert">Vous aimez le vert</p>');
     break;
     case 'maron' :
-        document.write('<p>Vous aimez le maron</p>');
+        document.write('<p class = "maron">Vous aimez le maron</p>');
     break;
     case 'violet' :
-        document.write('<p>Vous aimez le violet</p>');
+        document.write('<p class = "violet">Vous aimez le violet</p>');
     break;
+    case 'rouge' :
+    document.write('<p class = "rouge">Vous aimez le violet</p>');
+    break; 
+    case 'jaune' :
+    document.write('<p class = "jaune">Vous aimez le violet</p>');
+    break; 
     default :
-        document.write('<p>Vous n\'aimez auaucune de ces couleurs</p>');
+        document.write('<p>Vous n\'aimez aucune de ces couleurs</p>');
 }
 
  //---------------------
