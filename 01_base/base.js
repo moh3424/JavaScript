@@ -319,7 +319,7 @@ si la reponse est vide (on compare avec des quotes vides SANS espace,
 
 var age = prompt('Quel est votre age ?');
 
-if (age ==''){
+if ((age =='')||(age < 0)||(age > 130)){
     document.write('Vous n\'avez pas répondu');
  } else if ( isNaN( age ) ){
     document.write('Vous n\'avez pas indiqué un nombre');
@@ -624,26 +624,33 @@ d(deuxDimensions[0][2] + ' et des ' + deuxDimensions[1][2]);
 
 //-------------------
 // Exercice : créer un array avec les tailles S, M, L et XL. A l'aide d'une boucle for, afficher un menu déroulant  avec les tailles provenant de l'array, à l'intérieur
+
+//-1er Méthode
 d('<h3> 1er Méthode</h3>');
 var taille = ['Selection une taille','XL', 'L', 'M', 'S'];
 nav1 = '<select>',
 nav2 =  '</select>',
 nav3 =  '';
-// document.write('<select>');
+
 for (var i = 0; i < taille.length; i++) {
-    
     nav3 +='<option> '+ taille[i] + ' </option>';
-    
 }
 document.write(nav1 + nav3 + nav2);
 document.write('<br>');document.write('<br>');
 
+
+
+// 2eme Méthode
+
 d('<h3> 2eme Méthode</h3>');
+
 var taille = ['Selection une taille','S', 'M', 'L', 'XL'],
 tailleAffichage ='<select>';
 
-// document.write('<select>');
+
 console.log(taille);
+
+
 for (var i = 0; i < taille.length; i++) {
     tailleAffichage +='<option> '+ taille[i] + ' </option>';
 }
@@ -659,14 +666,23 @@ taille.unshift('XS'); // ajout "XS" au début de l'array taille
 console.log(taille);
 taille.pop(); // retire le dernier élément de l'array taille
 console.log(taille); 
-taille.shift(taille);
-console.log(taille); // retire le premier élément de l'array taille
+taille.shift(taille); // retire le premier élément de l'array taille
+console.log(taille);
+
+
 
 //-----------------
 // 15- Les Objet
 //-----------------
+
+
 document.write('<h3>-15 Les Objets</h3>');
+
+
+
 /**
+ * 
+ * 
  * Un objet est un ensemble de propriétés qui correspondent à l'association d'un nom et d'une valeur. cette valeur peut etre de n'importe quel type (string, number, boolean, array, objet ...)
  * 
  * Deplus, la valeur de la propriété peut etre un fonction. Dans ce cas cette propriété s'appelle une methode (il s'agit simplement d'une fonction dans un objet).
@@ -698,11 +714,17 @@ document.write('<h3>-15 Les Objets</h3>');
  personnage['animal'] = 'Milou' ;
  
 // Pour afficher Tournesol
+
+// 1er Méthode d'affichage
 document.write('<h3>1er Méthode d\'affichage</h3>');
 d(personnage.amis[1]);// Pour accéder a "Tournesole", on va à la propriété "amis" de personnage 
 
+
+// 2eme Méthode d'affichage
+
 document.write('<h3>2eme Méthode d\'affichage</h3>');
 d(personnage['amis'][1]); //de la meme manière qu'avec Milou
+
 
 //----------------
 // Création d'une objet avec une méthode :
