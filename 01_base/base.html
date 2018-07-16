@@ -59,6 +59,38 @@
         // ici vous mettez tout votre code JS.
         // Nous pouvons mettre le JS dans une balise script avant la fermuture du body pour que le document HTML soit chargé, ou dans le head à condition d'attendre que le HTML soit chargé a l'aide d'une fonction préfdéfinie.
         // Une des règles de bnase est de ne pas mélanger les langages afin de faciliter le développement et la maintenance: le HTML dans un fichier  .html, la CSS dans un fichier .css, et le JS dans un fichier JS.
+        placard = {
+    cereales: {
+        corn_flakes: 1,
+        frosties: 2
+    },
+    barres: {
+        snickers: 5,
+        mars: 6
+    },
+    pates: {
+        tagliatelle: 2,
+        spaghetti: 5
+    }
+};
+
+if (placard.cereales.rice_krispies) {
+    console.log("A");
+} else if (placard.cereales.corn_flakes > placard.cereales.frosties) {
+    console.log("B");
+} else {
+    if (placard.cereales.corn_flakes && (placard.barres.snickers || placard.barres.mars)) {
+        console.log("C");
+    } else {
+        console.log("D");
+    }
+}
+
+if (!(placard.barres.snickers <= placard.pates.spaghetti)) {
+    console.log("E");
+} else if (placard.barres.snickers === placard.pates.spaghetti) {
+    console.log("F");
+}
         // Ainsi on ne met pas de HTML et de CSS dans un 
     </script>
 </body>

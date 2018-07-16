@@ -32,9 +32,9 @@
        var champMdp = document.getElementById('mdp');
        
        //1- On vérifie tous les champs quand on clique sur "s'inscrire" :
-       document.querySelector('form').addEventListener('submit', function(event){
+        document.querySelector('form').addEventListener('submit', function(event){
            // submit se déclenche quand on soumet un formulaire avec l'input type "submit"
-
+             
            // L'objet event dans la parentèse de notre function sert à fournir des information sur les événement actuellement déclenché. Par exemple, vous pouvez récupérer les touches enfoncées, les coordonnées du curseur, ou bloquer un événement tel que l'envoi (= submit) du formulaire. Ce paramètre s'écrit "e" ou "event" par convention.
 
            var erreur = false; // pour dire qu'il n'y a pas d'erreur au début. On mettre cette variable à true dès qu'une erreur sera produite sur le formulaire
@@ -78,11 +78,6 @@
         //    quand on modifie la valeur d'un input
            this.classList.remove('red', 'green'); // On retire toutes les classes pour mettre une bordure par défault
        });
-
-       function compter(){
-    briques = 12;
-    return "Il y a " + briques + " briques";
-}
    </script>
     
 </body>
