@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+body{
+    background: #eff0f1;
+}
+.colorNavbar{/* couleur du font de la navbar */
+background : #061339;
+}
+.jumbotron{
+    background: url('../img/background.jpg');
+}
+.bordur {
+    border: 1px  soli gray;
+    
+}
+.colorTexh1 {
+    color : #FFF;
+}
+.red{
+    border: 1px solid red;
+}
+a{
+    text-decoration: none;
+}
+    
+h1, h5 {/* couleur des titres */
+    color : #FFF;
+    text-align : center;
+    text-shadow: 1em 0.5em rgba(7, 7, 7, 0.4 );
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merienda', cursive;
+}
+h2, h3, h4, h6 {
+    color : #2F4073;
+
+}
+h2 {/* h2 est positioné relativement a la nav */
+    position :relative;
+    left: 20%;
+}
+.corps {
+    width: 80%;
+    margin : 0 auto;
+  
+}
+
+.colorFooter {/* couleur du fon de footer */
+    background : #061339;
+}
+.coulerFont {/* fond de couleur pour row 2 */
+    background:  #7885A5;
+}
