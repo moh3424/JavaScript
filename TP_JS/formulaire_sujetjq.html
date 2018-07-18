@@ -1,0 +1,261 @@
+<!-- 
+
+EXERCICE : 
+          HTML   : vous faites un formulaire dans la <section#formulaire> avec un champ "votre choix", une zone de texte "votre adresse" et un bouton "commander".
+
+          jQuery : vous rendez fonctionnel le formulaire :
+
+            Lors de la validation du formulaire, tous les champs doivent obligatoirement être remplis pour que celui-ci soit validé. Au cas où un champ est vide lors de la validation du formulaire, sa bordure devient rouge, sinon verte.
+
+            Quand on change la valeur d'un input, sa bordure reprend sa couleur par défaut.
+
+            Si le formulaire est validé, le remplacer par un message de confirmation "Votre commande a bien été prise en compte !".
+
+            Enfin, au clic sur une image, le numéro de l'image se reporte dans l'input "Choix" du formulaire de commande.
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Formulaire</title>
+  <style>
+      .container{
+        max-width: 900px;
+        margin: 0 auto 300px auto;
+      }
+      #portfolio, #formulaire {
+        border: 1px solid grey;
+        display: flex;
+        flex-flow: row wrap;
+      }
+      #formulaire {
+        padding: 20px;
+      }
+      .bloc {
+          width: 250px;
+          margin: 23px;
+          height: 165px;    
+      }
+      .bloc img {
+          width: 100%;
+          height: 165px; 
+      }
+      input, textarea {
+          display: inline-block;
+          padding: 5px 10px;
+          margin: 10px 0;
+          border: 1px solid;
+          background: #fff;
+          color: #888;
+          width: 200px;
+      }
+      input[type=submit] {
+          width: 220px;
+      }
+      label {
+        display: block;
+        color: #888;
+      }
+      .red {
+        border: 1px solid red;
+      }
+      .green {
+        border: 1px solid green;
+      }
+      .succes {
+        color: green;
+        
+      }
+
+      /* ---------------- bonus ----------------- */
+     .vignette {
+        width: 250px;
+        height: 165px;
+        margin: auto;
+        display: block;
+      }
+
+  </style>
+
+
+</head>
+
+<body>
+  <main class="container">
+    <h1>Fonds d'écran</h1>
+
+    <h2>Choisissez une image</h2>
+      
+    <section id="portfolio">
+      <div class="bloc ciel all">
+        <img src="imgs/2.jpg" alt="" >
+        <div class="number">#1g</div>
+      </div>
+      <div class="bloc montagne all">
+        <img src="imgs/3.jpg" alt="" >
+        <div class="number">#2</div>
+      </div>
+      <div class="bloc ciel all">
+        <img src="imgs/4.jpg" alt="" >
+        <div class="number">#3</div>
+      </div>
+      <div class="bloc mer all">
+        <img src="imgs/6.jpg" alt="" >
+        <div class="number">#4</div>
+      </div>
+      <div class="bloc montagne all">
+        <img src="imgs/a.jpg" alt="" >
+        <div class="number">#5</div>
+      </div>
+      <div class="bloc montagne all">
+        <img src="imgs/b.jpg" alt="" >
+        <div class="number">#6</div>
+      </div>
+      <div class="bloc montagne all">
+        <img src="imgs/c.jpg" alt="" >
+        <div class="number">#7</div>
+      </div>
+      <div class="bloc mer all">
+        <img src="imgs/d.jpg" alt="" > 
+        <div class="number">#8</div>
+      </div>
+      <div class="bloc mer all">
+        <img src="imgs/e.jpg" alt="" >
+        <div class="number">#9</div>
+      </div>
+    </section>
+     
+    <h2>Puis passez commande</h2>
+
+    <section id="formulaire">
+        <div id="message"> </div>
+      <form action="" method = "post" class = "cacherForm">
+        <div>
+          <label for="choix">Votre Choix</label> 
+        </div>
+        <div>
+          <input type="text" id='numero'>
+        </div>
+        <div>
+            <label for="address">Votre Adresse</label> 
+          </div>
+        <div>  
+          <textarea for ='address' name="address" id="address" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+          <button type='submit' id='submit'>Envoyer</button>
+        </div>
+        
+      </form>
+      
+      
+            <img src="" alt="">
+       
+      
+    </section>
+  </main>
+
+
+<script>
+ $(function(){
+  
+  var champChoix = $('#numero').val();
+
+  var champAdres = $('#address').val();   
+       //1- On vérifie tous les champs quand on clique sur "s'inscrire" :
+       $('form').submit(function(event){
+           // submit se déclenche quand on soumet un formulaire avec l'input type "submit"
+
+           var erreur = false; // pour dire qu'il n'y a pas d'erreur au début.
+
+           //On vérifie le champ addresse :
+
+           if(champAdres == ''){
+               // la proprièté value permet d'accéder à la valeur saisie par l'internaute dans l'input 
+               $('#address').addClass('red');
+                erreur =true; // On passe la variable à true pour dir qu'il y a une erreur
+           } else{
+               // On est dans le else quand l'@ est la valeur de l'input :
+               $('#address').addClass('green');
+           }
+           // On verifie si le champs est vide  :
+           if (champChoix == ''){
+               // si  la valeur du champ  est vide :
+               $('#numero').addClass('red');
+               erreur = true; // pour spécifier qu'il y a une erreur
+
+           }else {
+               //
+              $('#numero').addClass('green');
+           }
+           
+           // Enfin, s'il y a une erreur (erreur vaut true), on bloque le formulaire et on met un message à l'intérnaute :
+            if (erreur === true){
+                // Bloque le submit :
+            event.preventDefault(); //bloque l'envoi du formulaire. Cette méthode permet de bloquer l'action par défaut d'un événement : bloquer un lien, l'envoi d'un formulaire, la coche d'une checkbox, etc.
+            $('#formilaire').html('Veuillez vérifier vos saisies !');
+            }else {
+            //   event.preventDefault();
+
+              // 1er méthode
+              //--------------
+              // document.querySelector('#message').textContent = 'Votre commande a bien été valider !';
+              // var targetElement = document.querySelector(".cacherForm");
+              // targetElement.style.display = "none";
+
+               // 2em méthode
+               $('#formulaire').html('Votre commande a bien été valider !') ;
+               $('#formulaire').addClass('succes');
+            }
+       });// fin du submit
+
+       champChoix.change(function(){
+           $(this).removeClass('green red');
+       });
+       champAdres.change(function(){
+           $(this).removeClass('green red');
+       });
+       
+     
+
+     });
+        
+
+$('#portfolio img').click(function(){
+        var monSrc = $(this).attr('src');
+        var num = $(this).next().html()[1];
+        $('input').val(num);
+        $('#formulaire img').attr('src', monSrc).css({marginLeft: '350px', marginTop : '0px',  width: '250px',
+        height: '165px'});
+
+//---------------------------------------
+//-----------bonus------------------
+
+if ($('.vignette').lenght == 0){
+        var vignette = document.createElement('img');// on créer une balise
+        viniette.classList.add('vignette'); //on lui ajoute  la classe vignette prèvue dans le CSS
+        document.querySelector('#formulaire').appendChild(vignette);// on accroche  vignette dans la balise #formulaire
+    }
+
+document.querySelector('.vignette').src = this.src;
+
+
+
+
+
+
+
+
+});// fin du document ready
+  
+</script>
+
+
+</body>
+</html>
