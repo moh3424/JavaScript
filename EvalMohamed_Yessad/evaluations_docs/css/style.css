@@ -9,9 +9,14 @@ background : #061339;
 .jumbotron{
     background: url('../img/background.jpg');
 }
-.bordur {
-    border: 1px  soli gray;
-    
+.message {
+    border: 2px  soli gray;
+    color : yellowgreen;
+    background: green; 
+}
+#message{
+    color : gray;
+    background: red;
 }
 .colorTexh1 {
     color : #FFF;
@@ -19,14 +24,20 @@ background : #061339;
 .red{
     border: 1px solid red;
 }
-a{
+.green{
+    border: 1px solid green;
+}
+a:hover{
     text-decoration: none;
+}
+.tete:hover{
+    /* background: #4a76e7; */
 }
     
 h1, h5 {/* couleur des titres */
     color : #FFF;
     text-align : center;
-    text-shadow: 1em 0.5em rgba(7, 7, 7, 0.4 );
+    text-shadow: 0.1em 0.1em rgba(7, 7, 7, 0.4 );
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Merienda', cursive;
@@ -37,7 +48,7 @@ h2, h3, h4, h6 {
 
 }
 h2 {/* h2 est positioné relativement a la nav */
-    position :relative;
+    position :center;
     padding-top:1em;
     padding-bottom:  1em;
     left: 20%;

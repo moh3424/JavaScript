@@ -35,30 +35,34 @@
           <!-- formulaire -->
          
             <div class="col-sm2  order-2 col-xl-4 order-xl-1 col-md-4 order-md-1 order-sm-2 form-group">
-              <h2>Les chats à adopter</h2>
               
-              <form class="border rounded p-2" >
-                <div class= " form-group">
-                  <label for="name">Choix du chat</label>
-                  <select class='form-control' name="name" id="name">
-                    <option value="" disabled>Selectionner</option>
-                    <option value="Sushi">Sushi</option>
-                    <option value="Maki">Maki</option>
-                    <option value="Sashimi">Sashimi</option>
-                    <option value="Yakitori">Yakitori</option>
-                    <option value="Onigri">Onigri</option>
-                  </select>
+              
+              <form class="border rounded p-4" >
+                <div class="">
+                  <div id="message"></div>
+                    <h2 class ="display-4 p-0">Les chats à adopter</h2>
+                  <div class= " form-group">
+                    <label for="name">Choix du chat</label>
+                    <select class='form-control' name="name" id="name">
+                      <option value = "" >Selectionner</option>
+                      <option value = "Sushi">Sushi</option>
+                      <option value = "Maki">Maki</option>
+                      <option value = "Sashimi">Sashimi</option>
+                      <option value = "Yakitori">Yakitori</option>
+                      <option value = "Onigri">Onigri</option>
+                    </select>
+                  </div>
+                <div class = "form-group">
+                    <label for="text">Raison d'adoption</label>
+                    <textarea name="texte" id="texte" cols="30" rows="10" class='form-control'></textarea>
+                    <button class="btn btn-block btn-success mt-4">Evoyer</button>
                 </div>
-               <div class = "form-group">
-                  <label for="text">Raison d'adoption</label>
-                  <textarea name="texte" id="texte" cols="30" rows="10" class='form-control'></textarea>
-                  <button class="btn btn-block btn-success mt-4">Evoyer</button>
-               </div>
+              </div>
               </form>
             </div>
         
           <!-- carousel -->
-          <div class="col-sm-10  order-1 col-xl-8 order-xl-2 col-md-8 order-md-2 order-sm-1 p-4 mt-5">
+          <div class="col-sm-10  order-1 col-xl-8 order-xl-2 col-md-8 order-md-2 order-sm-1 p-4 sm-ml-5 mt-5">
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                   <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -122,7 +126,7 @@
           <div class="col col-sm-12 col-md-6">
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis minima sunt quidem deleniti porro pariatur esse. Quod similique distinctio, repellendus reiciendis, fugiat tempora porro suscipit, explicabo exercitationem atque adipisci quis?</p>
           </div>
-          <div class="col col-sm-12 col-md-6">
+          <div class="col col-sm-12 col-md-6 sm-ml-5">
             <img class ="tete" src ="img/tete-chat.png" alt="">
           </div>
         </div>

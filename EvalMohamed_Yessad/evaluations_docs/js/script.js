@@ -66,31 +66,46 @@
 $(function(){
     var choix = $('#name');
     var raison = $('#texte');
-
+    var erreur = false;
     $('form').submit(function(event){
-        var erreur = false;
-        event.preventDefault();
-        if(choix.val() == ''){
+        // var erreur = false;
+        if(choix.val() === ''){
             choix.addClass('red');
-        erreur = true;
+            erreur = true;
         } else {
             choix.addClass('green');
         }
-        if (raison.val().lenght <15){
+        
+        if(raison.val() === '') {
             raison.addClass('red');
             erreur = true;
         } else {
             raison.addClass('green');
         }
-        choix.on('change', function(){
-            $(this).removeClass('red green')
-        });
-        choix.on('change', function(){
-            $(this).removeClass('red green')
-        });
+        if (erreur === false){
+            
+            
+            $('form').html('Votre choix est bien pris on compt'); 
+            event.preventDefault();
+        }else {
 
+            $('#message').html('Veuillez vérifier votre saisie');
+            event.preventDefault();
+        }
     });/* fin submit */
-   
+    choix.on('change', function(){
+            $(this).removeClass('red green')
+        });
+        raison.on('change', function(){
+            $(this).removeClass('red green')
+        });
+    $('.tete').mousedown(function(){
+        $(this).addClass('colorFooter');
+    });
+    $('.tete').mouseup(function(){
+        $(this).removeClass('colorFooter');
+    });
+    
 
 
 
