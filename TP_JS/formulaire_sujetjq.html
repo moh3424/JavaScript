@@ -231,9 +231,26 @@ $('#portfolio img').click(function(){
         var monSrc = $(this).attr('src');
         var num = $(this).next().html()[1];
         $('input').val(num);
-       
         $('#formulaire img').attr('src', monSrc).css({marginLeft: '350px', marginTop : '0px',  width: '250px',
         height: '165px'});
+
+//---------------------------------------
+//-----------bonus------------------
+
+if ($('.vignette').lenght == 0){
+        var vignette = document.createElement('img');// on créer une balise
+        viniette.classList.add('vignette'); //on lui ajoute  la classe vignette prèvue dans le CSS
+        document.querySelector('#formulaire').appendChild(vignette);// on accroche  vignette dans la balise #formulaire
+    }
+
+document.querySelector('.vignette').src = this.src;
+
+
+
+
+
+
+
 
 });// fin du document ready
   
