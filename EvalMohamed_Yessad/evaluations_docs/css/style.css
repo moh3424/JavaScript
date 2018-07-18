@@ -33,10 +33,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 h2, h3, h4, h6 {
     color : #2F4073;
+    padding-top: 1%;
 
 }
 h2 {/* h2 est positioné relativement a la nav */
     position :relative;
+    padding-top:1em;
+    padding-bottom:  1em;
     left: 20%;
 }
 .corps {
@@ -44,10 +47,17 @@ h2 {/* h2 est positioné relativement a la nav */
     margin : 0 auto;
   
 }
+.tete {
+    background: #7885a5;
+}
 
 .colorFooter {/* couleur du fon de footer */
     background : #061339;
 }
 .coulerFont {/* fond de couleur pour row 2 */
     background:  #7885A5;
+}
+
+.fondRow {
+    background: #dddddd;
 }
