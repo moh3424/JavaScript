@@ -372,22 +372,29 @@ if (age ==''){
 
  switch (couleur) {
     case 'bleu' :
-        document.write('<p>Vous aimez le bleu</p>');
+        document.write('<p class = "bleu">Vous aimez le bleu</p>');
+
     break;
     case 'rose' :
-        document.write('<p>Vous aimez le rouge</p>');
+        document.write('<p class = "rose">Vous aimez le rose</p>');
     break;
     case 'vert' :
-        document.write('<p>Vous aimez le vert</p>');
+        document.write('<p class = "vert">Vous aimez le vert</p>');
     break;
     case 'maron' :
-        document.write('<p>Vous aimez le maron</p>');
+        document.write('<p class = "maron">Vous aimez le maron</p>');
     break;
     case 'violet' :
-        document.write('<p>Vous aimez le violet</p>');
+        document.write('<p class = "violet">Vous aimez le violet</p>');
     break;
+    case 'rouge' :
+    document.write('<p class = "rouge">Vous aimez le violet</p>');
+    break; 
+    case 'jaune' :
+    document.write('<p class = "jaune">Vous aimez le violet</p>');
+    break; 
     default :
-        document.write('<p>Vous n\'aimez auaucune de ces couleurs</p>');
+        document.write('<p>Vous n\'aimez aucune de ces couleurs</p>');
 }
 
  //---------------------
@@ -406,10 +413,14 @@ if (age ==''){
     //..... du code .....
     i++;// On incrémente i de +1. On n'oublie pas d'incrémenter pour ne pas créer une boucle infinie
  }
+
  document.write('<br>');document.write('<br>');
+
+ //-------------------------
  // Exercice : sans modifier la condition la boucle while précédente, vous la compléter pour ne pa afficher les "---"
 
  // 1er Méthode
+
  document.write('<h2> 1er Méthode</h2>');
  var i = 0; // on initialise une variable à 0 pour compter le nombre de tours de boucle
 
@@ -427,12 +438,12 @@ if (age ==''){
  document.write('<h2>2eme Méthode</h2>');
  var i = 0;
  while ( i <= 5 ) {// ici entre parenthèse se situe la condition d'entrée dans la boucle while. Elle signifie "tant que i est inférieur ou égale à 5"
-switch (i) {
-    case 5 :
-        document.write(i + '');
-        break;
-    default :
-        document.write(i + '---');
+    switch (i) {
+        case 5 :
+            document.write(i + '');
+            break;
+        default :
+            document.write(i + '---');
     }
 i++;
 }
@@ -460,7 +471,7 @@ document.write('</select>');
 
 document.write('<br>');document.write('<br>');
 document.write('<h2>2eme Méthode</h2>');
- // 2eme Méthode
+//  2eme Méthode
 var 
     nav1 = '<select>',
     nav2 =  '</select>',
@@ -471,22 +482,25 @@ for ( i = 1900; i <= 2020; i++ ) {
 }  
 document.write(nav1 + nav3 + nav2);
 document.write('<br>');document.write('<br>');
- // 3eme Méthode
- document.write('<h2>3eme Méthode</h2>');
 
- document.write('<br>');document.write('<br>');
+//  3eme Méthode
+
+document.write('<h2>3eme Méthode</h2>');
+
+document.write('<br>');document.write('<br>');
 
 document.write('<br>');document.write('<br>');
 
-// var affichage = '';
-// affichage += '<selecte>'
-// for ( i = 1900; i <= 2020; i++ ) {
-//     affichage +='<option> '+ i + ' </option>' ;
-// }  
-// affichage += '</select>';
-// document.write(affichage);
+var affichage = '';
+    affichage += '<select>';
+for ( i = 1900; i <= 2020; i++ ) {
+    affichage +='<option> '+ i + ' </option>' ;
+}  
+affichage += '</select>';
+document.write(affichage);
 
 document.write('<br>');document.write('<br>');
+
 // La boucle do ... while existe aussi. Elle a la particularité de s'exécuter au moins une fois. Elle est rarement utilisée
 
 //---------------------
@@ -624,26 +638,33 @@ d(deuxDimensions[0][2] + ' et des ' + deuxDimensions[1][2]);
 
 //-------------------
 // Exercice : créer un array avec les tailles S, M, L et XL. A l'aide d'une boucle for, afficher un menu déroulant  avec les tailles provenant de l'array, à l'intérieur
+
+//-1er Méthode
 d('<h3> 1er Méthode</h3>');
 var taille = ['Selection une taille','XL', 'L', 'M', 'S'];
 nav1 = '<select>',
 nav2 =  '</select>',
 nav3 =  '';
-// document.write('<select>');
+
 for (var i = 0; i < taille.length; i++) {
-    
     nav3 +='<option> '+ taille[i] + ' </option>';
-    
 }
 document.write(nav1 + nav3 + nav2);
 document.write('<br>');document.write('<br>');
 
+
+
+// 2eme Méthode
+
 d('<h3> 2eme Méthode</h3>');
+
 var taille = ['Selection une taille','S', 'M', 'L', 'XL'],
 tailleAffichage ='<select>';
 
-// document.write('<select>');
+
 console.log(taille);
+
+
 for (var i = 0; i < taille.length; i++) {
     tailleAffichage +='<option> '+ taille[i] + ' </option>';
 }
@@ -659,14 +680,23 @@ taille.unshift('XS'); // ajout "XS" au début de l'array taille
 console.log(taille);
 taille.pop(); // retire le dernier élément de l'array taille
 console.log(taille); 
-taille.shift(taille);
-console.log(taille); // retire le premier élément de l'array taille
+taille.shift(taille); // retire le premier élément de l'array taille
+console.log(taille);
+
+
 
 //-----------------
 // 15- Les Objet
 //-----------------
+
+
 document.write('<h3>-15 Les Objets</h3>');
+
+
+
 /**
+ * 
+ * 
  * Un objet est un ensemble de propriétés qui correspondent à l'association d'un nom et d'une valeur. cette valeur peut etre de n'importe quel type (string, number, boolean, array, objet ...)
  * 
  * Deplus, la valeur de la propriété peut etre un fonction. Dans ce cas cette propriété s'appelle une methode (il s'agit simplement d'une fonction dans un objet).
@@ -698,11 +728,17 @@ document.write('<h3>-15 Les Objets</h3>');
  personnage['animal'] = 'Milou' ;
  
 // Pour afficher Tournesol
+
+// 1er Méthode d'affichage
 document.write('<h3>1er Méthode d\'affichage</h3>');
 d(personnage.amis[1]);// Pour accéder a "Tournesole", on va à la propriété "amis" de personnage 
 
+
+// 2eme Méthode d'affichage
+
 document.write('<h3>2eme Méthode d\'affichage</h3>');
 d(personnage['amis'][1]); //de la meme manière qu'avec Milou
+
 
 //----------------
 // Création d'une objet avec une méthode :
